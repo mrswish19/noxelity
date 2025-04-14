@@ -1,0 +1,21 @@
+{
+  "name": "noxell-bot",
+  "version": "1.0.0",
+  "description": "An undetectable smart Minecraft Bedrock Edition bot using bedrock-protocol",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "bot",
+    "bedrock-protocol",
+    "noxell"
+  ],
+  "author": "you",
+  "license": "MIT",
+  "dependencies": {
+    "bedrock-protocol": "^3.5.1"
+  }
+}
