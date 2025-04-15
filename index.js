@@ -20,7 +20,9 @@ bot.on('spawn', () => {
 bot.on('spawn', () => {
   console.log('Noxell spawned! Starting to walk...');
   walkLoop(bot);
-});
+
+  console.log('Bot has spawned! Running pathing logic...');
+  handlePathing(bot);
 });
 
 bot.on('time', (packet) => {
