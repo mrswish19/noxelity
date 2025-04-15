@@ -1,16 +1,17 @@
 // behaviors/pathing.js
-module.exports.preventFall = (bot) => {
-  // Check block below before moving
-  const blockBelow = bot.world.getBlock({ x: bot.entity.position.x, y: bot.entity.position.y - 1, z: bot.entity.position.z });
-  if (!blockBelow) {
-    bot.write('move_player', { position: { x: bot.entity.position.x, y: bot.entity.position.y + 1, z: bot.entity.position.z }, on_ground: true });
-  }
-};
+module.exports.preventFall = function preventFall(bot) {
+  if (!bot.world || !bot.entity || !bot.entity.position) return;
 
-module.exports.unstuckPath = (bot) => {
-  // Check block in front
-  const blockInFront = bot.world.getBlock({ x: bot.entity.position.x + 1, y: bot.entity.position.y, z: bot.entity.position.z });
-  if (blockInFront) {
-    bot.write('move_player', { position: { x: bot.entity.position.x, y: bot.entity.position.y + 1, z: bot.entity.position.z }, on_ground: true });
+  const pos = bot.entity.position;
+  const blockBelow = bot.world.getBlock({
+    x: pos.x,
+    y: pos.y - 1,
+    z: pos.z,
+  });
+
+  if (!blockBelow || blockBelow.name === 'air') {
+    bot.setControlState('jump', true);
+  } else {
+    bot.setControlState('jump', false);
   }
 };

@@ -30,6 +30,7 @@ bot.on('mob_spawn', () => {
 });
 
 bot.on('spawn', () => {
+  console.log('Bot has spawned! Running pathing logic...');
   handlePathing(bot);
 });
 
