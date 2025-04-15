@@ -1,5 +1,5 @@
 // behaviors/mobAvoidance.js
-const { isMobDangerous } = require('../utils/safety');
+//const { isMobDangerous } = require('../utils/safety');
 
 module.exports.avoidMobs = (bot) => {
   // Simple logic: move away if mob nearby and dangerous
