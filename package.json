@@ -16,6 +16,6 @@
   "author": "you",
   "license": "MIT",
   "dependencies": {
-    "bedrock-protocol": "^3.5.1"
+    "bedrock-protocol": "github:PrismarineJS/bedrock-protocol"
   }
 }
