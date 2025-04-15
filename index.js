@@ -29,7 +29,7 @@ bot.on('mob_spawn', () => {
   handleMobAvoidance(bot);
 });
 
-bot.on('move_player', () => {
+bot.on('spawn', () => {
   handlePathing(bot);
 });
 
