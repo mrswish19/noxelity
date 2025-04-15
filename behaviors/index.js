@@ -16,7 +16,6 @@ module.exports = {
   },
   handlePathing: (bot) => {
     preventFall(bot);
-    unstuckPath(bot);
   },
   respawnIfDead: (bot) => {
     bot.queue('respawn', {});
