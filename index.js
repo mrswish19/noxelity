@@ -1,7 +1,7 @@
 const { createClient } = require('bedrock-protocol');
 const fs = require('fs');
 const { handleNightSafety, handleHunger, handleMobAvoidance, handlePathing, respawnIfDead } = require('./behaviors');
-const walkRandomly = require('./behaviors/walkRandomly');
+const walkLoop = require('./behaviors/walkLoop');
 
 const bot = createClient({
   host: 'lootboxph.aternos.me',
@@ -17,9 +17,10 @@ bot.on('spawn', () => {
   console.log('Noxell joined the server!');
 });
 
-bot.once('spawn', () => {
-  console.log('Bot has spawned! Running pathing logic...');
-  walkRandomly(bot);
+bot.on('spawn', () => {
+  console.log('Noxell spawned! Starting to walk...');
+  walkLoop(bot);
+});
 });
 
 bot.on('time', (packet) => {
