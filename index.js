@@ -4,11 +4,11 @@ const { handleNightSafety, handleHunger, handleMobAvoidance, handlePathing, resp
 const walkLoop = require('./behaviors/walkLoop');
 
 const bot = createClient({
-  host: 'lootboxph.aternos.me',
-  port: 37123,
+  host: 'lootboxphh.aternos.me',
+  port: 44399,
   username: 'Noxell',
   offline: true,
-  version: '1.21.70'
+  version: '1.21.93'
 });
 
 let isNight = false;
